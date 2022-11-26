@@ -17,12 +17,19 @@
 <br>
 
 * MVP:
-    * 10 mental maths problems - to challenge your thinking and keep you sharp
-    * Randomly generated 7 questions
+    * Randomly generated 7 questions - mental maths problems - to challenge your thinking and keep you sharp
     * Provide a standard - challenging, progressive (use a cookie to track progression - globle-like?)
+    * It is expected that you get them right, what you want to do is do it faster perhaps
+    * No time limit, or stick 2 mins on it?
 * Future iteration: backend with users...
 
-    34 * 78 = 
+    5 + 17 = 22
+    7 * 101 = 707
+    123 / 3 = 41
+    764 - 98 = 666
+    76 * 4 = 304
+    34 + 55 = 89
+    34 * 78 = 2662
 
 <br>
 
