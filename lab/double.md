@@ -6,6 +6,7 @@
 * double.muntjac.io
 * No ads
 * Host on AWS (free trial) or what about github pages (free) - ask Hayden?
+* A game to keep your mental maths sharp
 
 <br>
 
@@ -15,11 +16,13 @@
 
 <br>
 
-* MVP
-    * Guess the monarch based off of info (reign, monarch #, notable achievement, dominion, house)
-    * Design:
-        * 'Painting' of Monarch (silhoutted)
-        * Globe of dominion
+* MVP:
+    * 10 mental maths problems - to challenge your thinking and keep you sharp
+    * Randomly generated 7 questions
+    * Provide a standard - challenging, progressive (use a cookie to track progression - globle-like?)
+* Future iteration: backend with users...
+
+    34 * 78 = 
 
 <br>
 
