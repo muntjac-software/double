@@ -20,7 +20,7 @@
     * Randomly generated 7 questions - mental maths problems - to challenge your thinking and keep you sharp
     * Provide a standard - challenging, progressive (use a cookie to track progression - globle-like?)
     * It is expected that you get them right, what you want to do is do it faster perhaps
-    * No time limit, or stick 2 mins on it?
+    * No time limit, or stick 2 mins on it? or perhaps the 
 * Future iteration: backend with users...
 
     5 + 17 = 22
@@ -30,6 +30,7 @@
     76 * 4 = 304
     34 + 55 = 89
     34 * 78 = 2662
+
 
 <br>
 
