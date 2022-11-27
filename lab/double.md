@@ -20,7 +20,7 @@
     * Randomly generated 7 questions - mental maths problems - to challenge your thinking and keep you sharp
     * Provide a standard - challenging, progressive (use a cookie to track progression - globle-like?)
     * It is expected that you get them right, what you want to do is do it faster perhaps
-    * No time limit, or stick 2 mins on it? or perhaps the 
+    * No time limit, or stick 2 mins on it? or perhaps the goal is to do it as quick as possible
 * Future iteration: backend with users...
 
     5 + 17 = 22
@@ -30,6 +30,34 @@
     76 * 4 = 304
     34 + 55 = 89
     34 * 78 = 2662
+
+
+Like worldle teaches you to memorise something visual, double should do the same.
+The mappings between the numbers - if you memorise this, mental maths becomes straightforward
+Take 1 to 5 for example as the range, take the number 4:
+4 + 1 = 5
+4 + 2 = 6
+4 + 3 = 7
+4 + 4 = 8
+4 + 5 = 9
+4 - 1 = 3
+4 - 2 = 2
+4 - 3 = 1
+4 - 4 = 0
+4 - 5 = -1
+4 * 1 = 4
+4 * 2 = 8
+4 * 3 = 12
+4 * 4 = 16
+4 * 5 = 20
+4 / 1 = 4
+4 / 2 = 2
+Every number in the range maps to every other number in the range
+This is represented by graphs
+y = x + 4
+y = x - 4
+y = 4x
+y = x/4
 
 
 <br>
