@@ -76,3 +76,12 @@ y = x/4
 
 
 blue shifted stars are even, red shifted are odd; the bigger the star the smaller the number (20% diiference, symbolises distance away), primes are brown dwarfs, multiples of 5 are red giants, multiples of 10 are neutron stars
+
+
+* Desmos Tab? | like intelliJ services? or VS Code terminal
+https://www.desmos.com/api/v1.7/docs/examples/parabola.html
+https://www.desmos.com/api/v1.7/docs/index.html
+
+
+https://www.color-hex.com/color-palette/98179
+https://draculatheme.com/contribute
