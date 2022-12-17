@@ -75,8 +75,6 @@ y = x/4
 
 
 
-blue shifted stars are even, red shifted are odd; the bigger the star the smaller the number (20% diiference, symbolises distance away), primes are brown dwarfs, multiples of 5 are red giants, multiples of 10 are neutron stars
-
 
 * Desmos Tab? | like intelliJ services? or VS Code terminal
 https://www.desmos.com/api/v1.7/docs/examples/parabola.html
@@ -85,3 +83,34 @@ https://www.desmos.com/api/v1.7/docs/index.html
 
 https://www.color-hex.com/color-palette/98179
 https://draculatheme.com/contribute
+
+
+https://atlassian.design/foundations/color
+https://atlassian.design/foundations/color-new/color-palette-new/
+
+
+
+STARS:
+blue shifted stars are even, red shifted are odd; the bigger the star the smaller the number (20% diiference, symbolises distance away), primes are brown dwarfs, multiples of 5 are red giants, multiples of 10 are neutron stars
+
+6-12px star variance (random)?
+Even: blue
+Odd: red
+primes: brown
+5's: red giant
+10's: neutrons
+
+
+
+-------
+
+CSS night skies:
+
+https://codepen.io/sweaver2112/pen/QWbvOMK
+
+https://codepen.io/interaminense/full/QyGbXL/
+
+
+No longer constellation, rather star system cluster:
+with each star reprents an x value and the planets representing y's (answers)
+
