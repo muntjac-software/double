@@ -114,3 +114,7 @@ https://codepen.io/interaminense/full/QyGbXL/
 No longer constellation, rather star system cluster:
 with each star reprents an x value and the planets representing y's (answers)
 
+
+
+
+Sack off Desmos integration; inappropriate...
