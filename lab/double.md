@@ -118,3 +118,16 @@ with each star reprents an x value and the planets representing y's (answers)
 
 
 Sack off Desmos integration; inappropriate...
+
+
+----
+
+OP JINGLE DOUBLE MVP:
+
+TUES 27th: 
+* Requirements Gathering
+* Project Set Up, including TC & Nexus
+* Research into Wordle
+* Any more design
+* Task planning
+* Test set up (AMAP)
