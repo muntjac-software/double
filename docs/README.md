@@ -28,7 +28,7 @@
         * Use specific commit messages of the form:
             * `[major/minor/patch] DBLE-<TICKET_NUMBER>: task description`
                 * Example: `[minor] DBLE-101: Updated header styles`
-    * Raise a PR to merge the branch and assign to team member(s)
+    * Raise a PR to merge the branch and assign to team member(s) for review
     * After successful review and merge, delete the remote branch
 * TeamCity:
 * Nexus:
