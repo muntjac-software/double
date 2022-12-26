@@ -125,9 +125,9 @@ Sack off Desmos integration; inappropriate...
 OP JINGLE DOUBLE MVP:
 
 TUES 27th: 
+* Task planning
 * Requirements Gathering
 * Project Set Up, including TC & Nexus
 * Research into Wordle
 * Any more design
-* Task planning
 * Test set up (AMAP)
