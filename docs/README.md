@@ -24,7 +24,7 @@
     * Checkout a branch per ticket
         * Naming Convention: `DBLE-<TICKET_NUMBER>`
             * Example: `DBLE-100`
-    * Raise a PR to merge the branch and assign to lead
+    * Raise a PR to merge the branch and assign to team member(s)
     * After successful review and merge, delete the remote branch
 * TeamCity:
 * Nexus:
