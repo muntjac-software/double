@@ -12,7 +12,6 @@ defaults:
 jobs:
   # STEP 1: Run Angular e2e tests with Cypress
   cypress-run:
-    name: Test :: Cypress
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
