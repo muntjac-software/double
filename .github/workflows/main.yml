@@ -10,11 +10,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout webapp
-        uses: actions/checkout@v3 && cd ./double-webapp
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Searchlight
-        run: ls -l
+      - name: Navigate to webapp
+        run: cd ./double-webapp
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
