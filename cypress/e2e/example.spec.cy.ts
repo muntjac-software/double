@@ -1,7 +1,7 @@
 describe('Example', () => {
 
-  specify('should have a non-empty title', () => {
-    cy.get('#app-title').should('not.be.empty');
+  specify('should have a non-empty header', () => {
+    cy.get('header').should('not.be.empty');
   });
 
 })
