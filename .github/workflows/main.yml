@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Cypress run
-        working-directory: ./double-webapp
         uses: cypress-io/github-action@v1
 
   # STEP 2: Publish to GitHub Packages
