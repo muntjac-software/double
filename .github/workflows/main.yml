@@ -1,0 +1,43 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - 'main'
+
+defaults:
+  run:
+    working-directory: ./double-webapp
+
+jobs:
+  # STEP 1: Run Angular e2e tests with Cypress
+  cypress-run:
+    name: Test :: Cypress
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.2.0
+        with:
+          build: npm run build
+          start: npm start
+
+  # STEP 2: Deploy to GitHub Pages
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.12.1]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install and build
+        run: npm i && npm run gh-build && cp dist/double-webapp/index.html
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: /dist/double-webapp
