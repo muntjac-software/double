@@ -4,7 +4,6 @@
 
 ## Useful Links
 * [Jira](https://jrsmiffy.atlassian.net/jira/software/projects/DBLE/boards/2)
-* [Dockerhub](https://hub.docker.com/r/muntjac/double-webapp/tags)
 
 <br>
 
@@ -12,8 +11,8 @@
 
 ### double-webapp
 * Versions:
-    * Angular: v15.0.4
-    * Node: v18.12.1
+    * Angular: `15.0.4`
+    * Node: `18.12.1`
 * Testing:
     * Cypress
 * Commands:
@@ -31,12 +30,7 @@
                 * Example: `[minor] DBLE-101: Updated header styles`
     * Raise a PR to merge the branch and assign to team member(s) for review
     * After successful review and merge, delete the remote branch
-* Docker:
-  * `double-webapp` is stored as an image on [Dockerhub](https://hub.docker.com/r/muntjac/double-webapp/tags)
-  * Build image: `docker build -t muntjac/double-webapp ./double-webapp`
-  * Push image: `docker push muntjac/double-webapp:latest`
-  * Pull image: `docker pull muntjac/double-webapp:latest`
-  * Start container: `docker run -d -it -p 80:80/tcp --name double-webapp muntjac/double-webapp:latest`
-  * Stop container: `docker kill double-webapp`
-  * Remove container: `docker rm double-webapp`
 * GitHub Actions:
+  * There is a workflow on the `main` branch that:
+    * Runs the Cypress test suite
+    * Builds and Deploys the Angular app to GitHub Pages
