@@ -11,18 +11,18 @@ defaults:
 
 jobs:
   # STEP 1: Run Angular e2e tests with Cypress
-  cypress-run:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v1
       - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          build: npm run build
-          start: npm start
+        uses: cypress-io/github-action@v1
 
-  # STEP 2: Deploy to GitHub Pages
+  # STEP 2: Publish to GitHub Packages
+#  build:
+
+  # STEP 3: Deploy to GitHub Pages
   deploy:
     runs-on: ubuntu-latest
     strategy:
