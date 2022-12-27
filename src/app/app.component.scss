@@ -1,0 +1,25 @@
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 1.5rem;
+  background-color: #303030;
+  width: 100%;
+  left: 0;
+
+  img {
+    height: 1rem;
+    position: fixed;
+    right: 1rem;
+    bottom: .25rem;
+    opacity: .7;
+    transition: .25s;
+  }
+
+  img:hover {
+    opacity: 1;
+    cursor: pointer;
+    transform: translateY(-1px);
+  }
+
+}
