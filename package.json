@@ -1,11 +1,10 @@
 {
-  "name": "double-webapp",
+  "name": "double",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "gh-build": "ng build --base-href /double/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
