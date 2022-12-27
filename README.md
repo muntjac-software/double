@@ -1,2 +1,2 @@
 # double
-A game to keep your mental maths sharp
+*a game to keep your mental maths sharp*
