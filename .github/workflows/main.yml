@@ -15,11 +15,11 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v1
+        with:
+          build: cd ./double-webapp && npm run build
+          start: npm start
 
-  # STEP 2: Publish to GitHub Packages
-#  build:
-
-  # STEP 3: Deploy to GitHub Pages
+  # STEP 2: Deploy to GitHub Pages
   deploy:
     runs-on: ubuntu-latest
     strategy:
