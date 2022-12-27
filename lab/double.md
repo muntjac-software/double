@@ -133,5 +133,5 @@ TUES 27th:
 * Test set up (AMAP)
 
 First 2h block: Create Angular, Set up Nexus and TC, Set up technical docs
-Second 2h block: Research Worldle 1h, Create UI design doc 1h
-Third 2h block: Gather Requirements (req doc, MOSCOW) 1h, Define Cypress e2e tests 1h
+Second 2h block: Research Worldle 0.5, Create UI design doc 1h
+Gather Requirements (req doc, MOSCOW) 0.5
