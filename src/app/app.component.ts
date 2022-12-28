@@ -14,7 +14,17 @@ export class AppComponent {
   menuExpanded: boolean = false;
 
   toggleMenu(): void {
-    this.menuExpanded = !this.menuExpanded;
+    let tagLine = document.getElementById('tag-line')!;
+
+    if (this.menuExpanded) {
+      this.menuExpanded = false;
+      tagLine.className = 'closed';
+
+    } else {
+      this.menuExpanded = true;
+      tagLine.className = 'expanded';
+
+    }
   }
 
 }
