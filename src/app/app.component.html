@@ -1,10 +1,14 @@
 <header>
-  <p>This is the header</p>
+  <fa-icon id="menu" [icon]="iconMenu" (click)="toggleMenu()"></fa-icon>
+  <h1>{{ title }}</h1>
+
+  <p id="tag-line">a game to keep your mental maths sharp</p>
+  <p id="under-development"><fa-icon [icon]="iconWarning"></fa-icon>Under Development - 2023</p>
 </header>
 
-<menu-bar></menu-bar>
+<menu-bar [menuExpanded]="menuExpanded"></menu-bar>
 
-<game-section></game-section>
+<game-section [menuExpanded]="menuExpanded"></game-section>
 
 <footer>
   <a href="https://github.com/muntjac-software/double" target="_blank">

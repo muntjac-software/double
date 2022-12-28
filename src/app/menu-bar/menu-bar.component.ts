@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'menu-bar',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-bar.component.scss']
 })
 export class MenuBarComponent {
+
+  @Input() menuExpanded: boolean = false;
 
 }

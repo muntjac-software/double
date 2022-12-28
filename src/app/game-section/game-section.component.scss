@@ -1,0 +1,32 @@
+
+#question {
+  background-color: #2C333A;
+  color: #2C333A;
+  width: 20rem;
+  position: fixed;
+  top: 4rem;
+  left: 5rem;
+  height: 100%;
+  z-index: 10;
+  transition: .75s;
+
+  &.expanded {
+    left: 20rem;
+  }
+
+}
+
+#answer {
+  background-color: #101214;
+  color: #101214;
+  width: 100%;
+  position: fixed;
+  top: 4rem;
+  left: 25rem;
+  height: 100%;
+
+  &.expanded {
+    left: 25rem;
+  }
+
+}
