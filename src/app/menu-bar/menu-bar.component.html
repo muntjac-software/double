@@ -1,1 +1,26 @@
-<div [class.expanded]="menuExpanded">Menu</div>
+<section [class.expanded]="menuExpanded">
+
+  <div class="menu-item" id="instructions">
+    <div class="menu-item-header" [class.expanded]="menuExpanded">
+      <p><fa-icon [icon]="iconInfo"></fa-icon></p>
+      <span [class.expanded]="menuExpanded">Instructions</span>
+    </div>
+    <div class="menu-item-body">
+      <p [class.expanded]="menuExpanded">Given today’s equation</p>
+      <p [class.expanded]="menuExpanded">Calculate the value of <br> Y for each of the X’s</p>
+      <p [class.expanded]="menuExpanded">Each system is an X <br> Each planet is a Y</p>
+      <p [class.expanded]="menuExpanded">Select all 7 correct Y’s <br> in the time limit to pass</p>
+    </div>
+  </div>
+
+<!--  <div class="menu-item" id="difficulty">-->
+<!--    <div class="menu-item-header" [class.expanded]="menuExpanded">-->
+<!--      <p><fa-icon [icon]="iconSettings"></fa-icon></p>-->
+<!--      <span [class.expanded]="menuExpanded">Difficulty</span>-->
+<!--    </div>-->
+<!--    <div class="menu-item-body">-->
+
+<!--    </div>-->
+<!--  </div>-->
+
+</section>

@@ -1,4 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {faCircleInfo, faCog} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'menu-bar',
@@ -8,5 +9,8 @@ import {Component, Input} from '@angular/core';
 export class MenuBarComponent {
 
   @Input() menuExpanded: boolean = false;
+
+  iconInfo = faCircleInfo;
+  iconSettings = faCog;
 
 }
