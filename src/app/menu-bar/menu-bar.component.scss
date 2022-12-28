@@ -8,7 +8,7 @@ section {
   position: fixed;
   top: $height-header;
   left: 0;
-  z-index: 100;
+  z-index: 100; // TODO: refactor z-index across the app
   transition: .75s;
 
   &.expanded {
@@ -39,15 +39,15 @@ section {
         left: 5rem; // TODO: extract
         margin-left: 1rem;
         opacity: 0;
-        -webkit-animation-name: fadeOutRight;
-        animation-name: fadeOutRight;
+        -webkit-animation-name: fadeOut;
+        animation-name: fadeOut;
         -webkit-animation-duration: .75s;
         animation-duration: .75s;
 
         &.expanded {
           opacity: 0.8;
-          -webkit-animation-name: fadeInRight;
-          animation-name: fadeInRight;
+          -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
         }
 
       }
@@ -55,24 +55,29 @@ section {
     }
 
     .menu-item-body {
+      opacity: .2;
       position: fixed;
       left: 5rem; // TODO: extract
       margin-left: 1rem;
+
+      &.expanded {
+        opacity: .8;
+      }
 
       p {
         opacity: 0;
         text-align: right;
         margin-right: 3rem; // TODO: CALC PROPER + EXTRACT
 
-        -webkit-animation-name: fadeOutRight;
-        animation-name: fadeOutRight;
+        -webkit-animation-name: fadeOut;
+        animation-name: fadeOut;
         -webkit-animation-duration: .75s;
         animation-duration: .75s;
 
         &.expanded {
           opacity: 0.8;
-          -webkit-animation-name: fadeInRight;
-          animation-name: fadeInRight;
+          -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
         }
 
       }
