@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faBars, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'double';
+  iconMenu = faBars;
+  iconWarning = faTriangleExclamation;
+
+  menuExpanded: boolean = false;
+
+  toggleMenu(): void {
+    this.menuExpanded = !this.menuExpanded;
+  }
+
 }

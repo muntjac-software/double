@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'game-section',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./game-section.component.scss']
 })
 export class GameSectionComponent {
+
+  @Input() menuExpanded: boolean = false;
 
 }
