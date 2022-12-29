@@ -15,9 +15,7 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@
-        # FixMe: Cypress could not verify that this server is running:
-        # > http://localhost:4200
-        # We are verifying this server because it has been configured as your baseUrl.
+        # FixMe: need to fix this workflow...
 
   # STEP 2: Deploy to GitHub Pages
   deploy:
