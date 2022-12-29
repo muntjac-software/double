@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { GameSectionComponent } from './components/game-section/game-section.component';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
-import {GameService} from "./services/game.service";
+import { GameService } from "./services/game.service";
+import { InfoBarComponent } from "./components/game-section/info-bar/info-bar.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuBarComponent,
-    GameSectionComponent
+    GameSectionComponent,
+    InfoBarComponent
   ],
   imports: [
     AppRoutingModule,

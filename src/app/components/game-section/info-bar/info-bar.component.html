@@ -1,0 +1,8 @@
+<section [class.expanded]="menuExpanded">
+  <p>{{ date }}</p>
+  <p>Today's Equation is</p>
+  <p id="equation">Y = {{ mValue }}X + {{ cValue }}</p>
+  <ol>
+    <li *ngFor="let xValue of xValues">{{ xValue }}</li>
+  </ol>
+</section>
