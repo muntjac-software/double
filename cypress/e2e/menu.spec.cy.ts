@@ -20,7 +20,7 @@ describe('Menu Section', () => {
 
     // then
     cy.get('header > #tag-line').should('have.css', 'opacity', '0');
-
+    // TODO: extend assertions for menu side bar
   });
 
 })
