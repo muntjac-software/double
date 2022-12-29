@@ -1,0 +1,1 @@
+@keyframes fadeInRight{0%{opacity:0;transform:translate(-20px)}to{opacity:.8;transform:translate(0)}}@keyframes fadeOutRight{0%{opacity:.8;transform:translate(0)}to{opacity:0;transform:translate(-20px)}}@keyframes fadeIn{0%{opacity:0}to{opacity:.8}}@keyframes fadeOut{0%{opacity:.8}to{opacity:0}}html,body{font-size:12px;font-family:Inter,sans-serif;color:#eee}
