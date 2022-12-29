@@ -1,2 +1,2 @@
 # double
-a [game](https://muntjac-software.github.io/double/) to keep your 🧠 🧮 🗡️
+a [game](http://double.muntjac.io/) to keep your 🧠 🧮 🗡️
