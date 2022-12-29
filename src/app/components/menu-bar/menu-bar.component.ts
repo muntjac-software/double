@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { faCircleInfo, faCog, faSkullCrossbones } from "@fortawesome/free-solid-svg-icons";
-import { Difficulty } from '../model/difficulty';
+import { Difficulty } from '../models/difficulty';
 
 @Component({
   selector: 'menu-bar',
