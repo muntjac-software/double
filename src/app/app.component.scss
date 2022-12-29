@@ -48,13 +48,13 @@ header {
     &.expanded {
       opacity: .8;
 
-      -webkit-animation-name: fadeInRight;
-      animation-name: fadeInRight;
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
     }
 
     &.closed {
-      -webkit-animation-name: fadeOutRight;
-      animation-name: fadeOutRight;
+      -webkit-animation-name: fadeOut;
+      animation-name: fadeOut;
     }
 
   }
