@@ -1,5 +1,6 @@
+@namespace url('http://www.w3.org/2000/svg');
 
-#answer {
+#cluster {
   background-color: #101214;
   color: #101214;
   width: calc(100% - 25rem);
@@ -10,6 +11,10 @@
 
   &.expanded {
     left: 25rem;
+  }
+
+  #points { // TODO: rename
+
   }
 
 }

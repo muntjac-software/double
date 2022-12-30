@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {GameService} from "../../services/game.service";
 
 @Component({
   selector: 'game-section',
@@ -9,7 +10,20 @@ export class GameSectionComponent implements OnInit{
 
   @Input() menuExpanded: boolean = false;
 
+  mValue: number = 1;
+  cValue: number = 1;
+  xValues: number[] = [];
+  gameService: GameService;
+
+  constructor(gameService: GameService) {
+    this.gameService = gameService;
+  }
+
   ngOnInit(): void {
+    this.mValue = this.gameService.generateMValue();
+    this.cValue = this.gameService.generateCValue();
+    this.xValues = this.gameService.generateXValues();
+
     this.generateSystems();
   }
 
@@ -18,8 +32,8 @@ export class GameSectionComponent implements OnInit{
     // assign an x-value
     // draw on the screen
     // set up demo
-    let svgWidth = document.getElementById('answer')!.clientWidth;
-    let svgHeight = document.getElementById('answer')!.clientHeight;
+    let svgWidth = document.getElementById('cluster')!.clientWidth;
+    let svgHeight = document.getElementById('cluster')!.clientHeight;
 
     console.log(svgWidth);
     console.log(svgHeight);
@@ -28,7 +42,7 @@ export class GameSectionComponent implements OnInit{
     let points = new Array(n);
 
     // reset SVG
-    document.getElementById('answer')!.setAttribute('viewBox', '0 0 '+svgWidth+' '+svgHeight);
+    document.getElementById('cluster')!.setAttribute('viewBox', '0 0 '+svgWidth+' '+svgHeight);
 
     let centers = [
       {x: 150 + this.generateOffset(), y: 150 + this.generateOffset()},
@@ -45,7 +59,9 @@ export class GameSectionComponent implements OnInit{
       points[i] = centers[i];
         // this.generateRandomPoint(svgWidth, svgHeight);
       points[i].id = i + 1;
-      this.drawSystem(points[i].x, points[i].y, 100, [10, 10, 10, 10, 10]);
+
+      let potentialAnswers = this.gameService.generatePotentialAnswers(this.mValue, this.cValue, this.xValues[i]);
+      this.drawSystem(points[i].x, points[i].y, this.xValues[i], potentialAnswers);
     }
 
   }
@@ -97,7 +113,7 @@ export class GameSectionComponent implements OnInit{
     }
   }
 
-  private drawSystem(x: number, y: number, xValue: number, yValues: number[]){
+  private drawSystem(x: number, y: number, xValue: number, yValues: number[]) {
     let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.setAttribute('stroke', '#738496');
     circle.setAttribute('fill', '#101214');
@@ -146,13 +162,15 @@ export class GameSectionComponent implements OnInit{
 
       planet.setAttribute('cx', `${cx}`);
       planet.setAttribute('cy', `${cy}`);
-      planet.setAttribute('r', '3');
+      planet.setAttribute('r', '3.5');
+      planet.setAttribute("class", 'answer');
+      planet.setAttribute("onclick", 'console.log("hit")');
 
       document.getElementById('points')!.appendChild(planet);
 
       let yTxt = document.createElementNS("http://www.w3.org/2000/svg", 'text');
-      yTxt.setAttribute('x', `${cx - 12}`);
-      yTxt.setAttribute('y', `${cy + 12}`);
+      yTxt.setAttribute('x', `${cx - 15}`);
+      yTxt.setAttribute('y', `${cy + 15}`);
       yTxt.setAttribute('font-size','0.75rem');
       yTxt.setAttribute('fill','#eee');
       yTxt.innerHTML = `${yValues[i]}`;
@@ -164,6 +182,10 @@ export class GameSectionComponent implements OnInit{
     document.getElementById('points')!.appendChild(circle);
     document.getElementById('points')!.appendChild(txt);
 
+  }
+
+  private setAnswer(yValue: number): void {
+    console.log(yValue);
   }
 
 }
