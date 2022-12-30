@@ -9,6 +9,8 @@ export class GameService {
   private cRange: number = 10;
   private xRange: number = 20;
 
+  private potentialAnswersSet: Set<number> = new Set();
+
   constructor() { }
 
   generateMValue(): number {
@@ -20,9 +22,13 @@ export class GameService {
   }
 
   generateXValues(): number[] {
-    let xValues = [];
+    let xValues: number[] = [];
     while (xValues.length < 7) {
-      xValues.push(this.getRandomInt(this.xRange));
+      let candidate = this.getRandomInt(this.xRange);
+
+      if (!xValues.includes(candidate)) {
+        xValues.push(candidate);
+      }
     }
 
     return xValues;
@@ -30,14 +36,18 @@ export class GameService {
 
   generatePotentialAnswers(m: number, c: number, x: number): number[] {
     let potentialAnswers = []
-    let answersRequired = 5 - 1 // TODO: extract answers required
+    let answersRequired = 5 // TODO: extract answers required
 
     let answerActual = m * x + c;
     potentialAnswers.push(answerActual)
 
-    for (let i = 0; i < answersRequired; i++) {
-      let answerPotential = answerActual += this.getRandomInt(20); // TODO: extract random answer spread
-      potentialAnswers.push(answerPotential); // FixMe: naming?
+    while (potentialAnswers.length < answersRequired) {
+      let candidate = answerActual += this.getRandomInt(20); // TODO: extract random answer spread
+
+      if (!this.potentialAnswersSet.has(candidate)) {
+        potentialAnswers.push(candidate); // FixMe: naming?
+        this.potentialAnswersSet.add(candidate);
+      }
       // TODO: 'test' for duplicates
     }
 
@@ -59,6 +69,10 @@ export class GameService {
     let naturalNumber = Math.floor(Math.random() * range) + 1;
 
     return (naturalNumber) * sign;
+  }
+
+  public setGameOver(playerWon: boolean) {
+    // TODO: how to propagate to the info bar so we can display that share result msg...
   }
 
 }

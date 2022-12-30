@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {GameService} from "../../../services/game.service";
+import { Component, Input } from '@angular/core';
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'info-bar',
@@ -14,5 +14,11 @@ export class InfoBarComponent {
   @Input() xValues: number[] = [];
 
   date: string = new Date().toDateString();
+
+  iconCopy = faCopy;
+
+  copyResult() {
+    navigator.clipboard.writeText('a game to keep your 🧠 🧮 🗡️').then();
+  }
 
 }

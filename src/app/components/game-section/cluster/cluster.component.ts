@@ -215,11 +215,26 @@ export class ClusterComponent implements OnInit {
       document.getElementById(`${xValue}`)!.setAttribute('stroke', '#FF5630');
     }
 
+    if (this.selectedAnswers.length === 7 && this.areAllAnswersCorrect()) {
+      this.gameService.setGameOver(true);
+    }
+
     console.log(this.selectedAnswers);
   }
 
   private isAnswerCorrect(x: number, y: number): boolean {
     return y === (this.mValue * x + this.cValue);
+  }
+
+  private areAllAnswersCorrect(): boolean {
+    if (this.selectedAnswers.length < 7) return false;
+    let allCorrect = true;
+
+    for (let answerCombo of this.selectedAnswers) {
+      if (!this.isAnswerCorrect(answerCombo.x, answerCombo.y)) allCorrect = false;
+    }
+
+    return allCorrect;
   }
 
 }
