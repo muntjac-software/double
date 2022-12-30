@@ -1,5 +1,15 @@
-<info-bar [menuExpanded]="menuExpanded"></info-bar>
+<info-bar
+  [menuExpanded]="menuExpanded"
+  [mValue]="mValue"
+  [cValue]="cValue"
+  [xValues]="xValues">
+</info-bar>
 
-<svg id="answer" [class.expanded]="menuExpanded" preserveAspectRatio="xMidYMid slice">
-  <g id="points"></g>
-</svg>
+<section id="cluster-section" [class.expanded]="menuExpanded">
+  <cluster
+    [menuExpanded]="menuExpanded"
+    [mValue]="mValue"
+    [cValue]="cValue"
+    [xValues]="xValues">
+  </cluster>
+</section>
