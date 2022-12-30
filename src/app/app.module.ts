@@ -8,13 +8,19 @@ import { GameSectionComponent } from './components/game-section/game-section.com
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { GameService } from "./services/game.service";
 import { InfoBarComponent } from "./components/game-section/info-bar/info-bar.component";
+import { ClusterComponent } from './components/game-section/cluster/cluster.component';
+import { SystemComponent } from './components/game-section/cluster/system/system.component';
+import { PlanetComponent } from "./components/game-section/cluster/system/planet/planet.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuBarComponent,
     GameSectionComponent,
-    InfoBarComponent
+    InfoBarComponent,
+    ClusterComponent,
+    SystemComponent,
+    PlanetComponent
   ],
   imports: [
     AppRoutingModule,

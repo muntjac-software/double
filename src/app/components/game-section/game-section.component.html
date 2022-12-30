@@ -2,21 +2,14 @@
   [menuExpanded]="menuExpanded"
   [mValue]="mValue"
   [cValue]="cValue"
-  [xValues]="xValues"
-></info-bar>
+  [xValues]="xValues">
+</info-bar>
 
-<svg id="cluster" [class.expanded]="menuExpanded" preserveAspectRatio="xMidYMid slice">
-  <style id="cluster-style" type="text/css">
-    .answer {
-      transition: .5s;
-      opacity: .7;
-    }
-
-    .answer:hover {
-      cursor: pointer;
-      opacity: 1;
-      r: 5;
-    }
-  </style>
-  <g id="points"></g>
-</svg>
+<section id="cluster-section" [class.expanded]="menuExpanded">
+  <cluster
+    [menuExpanded]="menuExpanded"
+    [mValue]="mValue"
+    [cValue]="cValue"
+    [xValues]="xValues">
+  </cluster>
+</section>

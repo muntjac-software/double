@@ -1,0 +1,20 @@
+<svg
+  id="cluster"
+  [class.expanded]="menuExpanded"
+  preserveAspectRatio="xMidYMid slice">
+  <style id="cluster-style" type="text/css">
+    .answer {
+      transition: .5s;
+      opacity: .7;
+    }
+
+    .answer:hover {
+      cursor: pointer;
+      opacity: 1;
+      r: 5;
+    }
+  </style>
+  <g id="points">
+    <g id="answers" #answersGroup></g>
+  </g>
+</svg>
