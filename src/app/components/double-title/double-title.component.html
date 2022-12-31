@@ -1,0 +1,19 @@
+<section [class.expanded]="menuExpanded" [class.closed]="menuClosed">
+  <h1 id="title-initial">{{ title }}</h1>
+
+  <div id="title-expanded">
+    <div class="stack" style="--stacks: 3;">
+      <span style="--index: 0;">d<span class="d2xble">2x</span>ble</span>
+      <span style="--index: 1;">d<span class="d2xble">2x</span>ble</span>
+      <span style="--index: 2;">d<span class="d2xble">2x</span>ble</span>
+    </div>
+  </div>
+
+  <div id="title-closed">
+    <div class="stack" style="--stacks: 3;">
+      <span style="--index: 0;">{{ title }}</span>
+      <span style="--index: 1;">{{ title }}</span>
+      <span style="--index: 2;">{{ title }}</span>
+    </div>
+  </div>
+</section>

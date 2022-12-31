@@ -46,6 +46,11 @@ export class InfoBarComponent implements OnDestroy {
 
   }
 
+  // NEXT TODO: just confirm that things are fine git-wise:
+  // that DEPLOY HAS THE RIGHT code
+  // DBLE-25 has the right code too
+  // THEN START CLEANING AND TESTING this mf...
+
   private unsecuredCopyToClipboard(content: string) { // TODO: temp hack to bypass !HTTPS on double.muntjac.io
     const textArea = document.createElement("textarea");
     textArea.value = content;

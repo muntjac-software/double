@@ -11,8 +11,9 @@ import { InfoBarComponent } from "./components/game-section/info-bar/info-bar.co
 import { ClusterComponent } from './components/game-section/cluster/cluster.component';
 import { SystemComponent } from './components/game-section/cluster/system/system.component';
 import { PlanetComponent } from "./components/game-section/cluster/system/planet/planet.component";
-import {MatButtonModule} from "@angular/material/button";
-import {MessageService} from "./services/message.service";
+import { MatButtonModule } from "@angular/material/button";
+import { MessageService } from "./services/message.service";
+import { DoubleTitleComponent } from './components/double-title/double-title.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MessageService} from "./services/message.service";
     InfoBarComponent,
     ClusterComponent,
     SystemComponent,
-    PlanetComponent
+    PlanetComponent,
+    DoubleTitleComponent
   ],
   imports: [
     AppRoutingModule,

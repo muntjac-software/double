@@ -3,7 +3,7 @@
 
 section {
   background-color: #22272B;
-  width: 5rem;
+  width: $width_menu_initial;
   height: 100%;
   position: fixed;
   top: $height_header;
@@ -12,7 +12,7 @@ section {
   transition: .75s;
 
   &.expanded {
-    width: 20rem;
+    width: $width_menu_expanded;
   }
 
   .menu-item {
