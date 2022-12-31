@@ -1,6 +1,8 @@
+@import "../../../../scss/variables";
+
 section {
   background-color: #2C333A;
-  width: 20rem;
+  width: $width_info_bar;
   position: fixed;
   top: 4rem;
   left: 5rem;
@@ -39,6 +41,25 @@ section {
       opacity: 0.7;
       transition: 0.5s;
       letter-spacing: 1px;
+    }
+
+  }
+
+  #end-game-message {
+    position: fixed;
+    bottom: 5rem;
+    text-align: center;
+    width: $width_info_bar;
+
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    button {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #2C333A;
     }
 
   }
