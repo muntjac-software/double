@@ -74,6 +74,16 @@ export class ClusterComponent implements OnInit {
       this.drawSystem(points[i].x, points[i].y, this.xValues[i], potentialAnswers);
     }
 
+
+    let equation = document.createElementNS("http://www.w3.org/2000/svg", 'text');
+    equation.setAttribute('x', `${svgWidth / 2 - 50}`);
+    equation.setAttribute('y', `${35}`);
+    equation.setAttribute('font-size', '1.5rem');
+    equation.setAttribute('fill', '#ccc');
+    equation.innerHTML = `Y = ${this.mValue}X + ${this.cValue}`;
+
+    document.getElementById('points')!.appendChild(equation);
+
   }
 
   private generateOffset() {

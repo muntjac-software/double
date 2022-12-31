@@ -37,7 +37,30 @@ export class InfoBarComponent implements OnDestroy {
   }
 
   copyResult() {
-    navigator.clipboard.writeText(' 🧠 🧮 🗡️ :: [RECRUIT] [🟢🟢🟢🟢🟢🟢🟢] [5s]').then();
+    let content = '🧠 🧮 🗡️ :: [RECRUIT] [🟢🟢🟢🟢🟢🟢🟢] [5s]';
+    if (window.isSecureContext && navigator.clipboard) {
+      navigator.clipboard.writeText(content).then();
+    } else {
+      this.unsecuredCopyToClipboard(content);
+    }
+
   }
+
+  private unsecuredCopyToClipboard(content: string) { // TODO: temp hack to bypass !HTTPS on double.muntjac.io
+    const textArea = document.createElement("textarea");
+    textArea.value = content;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      console.log('Using deprecated copy function');
+    } catch(err) {
+      console.error('Unable to copy to clipboard',err)
+    }
+
+    document.body.removeChild(textArea);
+  }
+  // https://stackoverflow.com/questions/71873824/copy-text-to-clipboard-cannot-read-properties-of-undefined-reading-writetext
 
 }
