@@ -6,7 +6,7 @@
     <li *ngFor="let xValue of xValues">{{ xValue }}</li>
   </ol>
 
-  <div id="end-game-message">
+  <div id="end-game-message" *ngIf="gameOver">
     <h1>Success</h1>
     <p>You're not as green as you are cabbage looking</p>
     <button mat-raised-button (click)="copyResult()"><fa-icon [icon]="iconCopy"></fa-icon> Result</button>

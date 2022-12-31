@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { MessageService } from "./message.service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,11 @@ export class GameService {
 
   private potentialAnswersSet: Set<number> = new Set();
 
-  constructor() { }
+  private messageService: MessageService;
+
+  constructor(messageService: MessageService) {
+    this.messageService = messageService;
+  }
 
   generateMValue(): number {
     return this.getRandomInt(this.mRange);
@@ -44,7 +49,7 @@ export class GameService {
     while (potentialAnswers.length < answersRequired) {
       let candidate = answerActual += this.getRandomInt(20); // TODO: extract random answer spread
 
-      if (!this.potentialAnswersSet.has(candidate)) {
+      if (!this.potentialAnswersSet.has(candidate)) { // FixMe: not working properly - duplicates slipping through
         potentialAnswers.push(candidate); // FixMe: naming?
         this.potentialAnswersSet.add(candidate);
       }
@@ -72,7 +77,9 @@ export class GameService {
   }
 
   public setGameOver(playerWon: boolean) {
+    // TODO: NEXT!
     // TODO: how to propagate to the info bar so we can display that share result msg...
+    this.messageService.sendMessage(playerWon); // Question: define message structure in a model somewhere? https://balramchavan.medium.com/angular-event-broker-service-communication-between-components-fba190ce0bd5
   }
 
 }

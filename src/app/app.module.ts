@@ -12,6 +12,7 @@ import { ClusterComponent } from './components/game-section/cluster/cluster.comp
 import { SystemComponent } from './components/game-section/cluster/system/system.component';
 import { PlanetComponent } from "./components/game-section/cluster/system/planet/planet.component";
 import {MatButtonModule} from "@angular/material/button";
+import {MessageService} from "./services/message.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatButtonModule
   ],
   providers: [
-    GameService
+    GameService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
