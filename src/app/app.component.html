@@ -5,7 +5,7 @@
     [menuExpanded]="menuExpanded"
     [menuClosed]="menuClosed">
   </double-title>
-  <p id="tag-line">a game to keep your mental maths sharp</p>
+  <p id="tag-line" [class.expanded]="menuExpanded" [class.closed]="menuClosed">{{ tagLine }}</p>
   <p id="under-development"><fa-icon [icon]="iconWarning"></fa-icon>Under Development</p>
 </header>
 

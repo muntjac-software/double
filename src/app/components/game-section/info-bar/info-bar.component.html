@@ -1,15 +1,15 @@
 <section [class.expanded]="menuExpanded">
   <p>{{ date }}</p>
   <p>Today's Equation is</p>
-  <p id="equation">Y = {{ mValue }}X + {{ cValue }}</p>
+  <p id="equation">{{ equation }}</p>
   <ol>
     <li *ngFor="let xValue of xValues">{{ xValue }}</li>
   </ol>
 
   <div id="end-game-message" *ngIf="gameOver">
     <h1>Success</h1>
-    <p>You're not as green as you are cabbage looking</p>
-    <button mat-raised-button (click)="copyResult()"><fa-icon [icon]="iconCopy"></fa-icon> Result</button>
+    <p> {{ successMsg }}</p>
+    <button mat-raised-button (click)="resultService.copy()"><fa-icon [icon]="iconCopy"></fa-icon> Result</button>
     <!-- future TODO: implement notification service: copied notification -->
   </div>
 </section>

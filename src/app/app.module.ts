@@ -14,6 +14,8 @@ import { PlanetComponent } from "./components/game-section/cluster/system/planet
 import { MatButtonModule } from "@angular/material/button";
 import { MessageService } from "./services/message.service";
 import { DoubleTitleComponent } from './components/double-title/double-title.component';
+import {ResultService} from "./services/result.service";
+import {LoggerService} from "./services/logger.service";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { DoubleTitleComponent } from './components/double-title/double-title.com
   ],
   providers: [
     GameService,
-    MessageService
+    LoggerService,
+    MessageService,
+    ResultService
   ],
   bootstrap: [AppComponent]
 })

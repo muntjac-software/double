@@ -45,8 +45,7 @@ export class ClusterComponent implements OnInit {
     let svgWidth = document.getElementById('cluster')!.clientWidth;
     let svgHeight = document.getElementById('cluster')!.clientHeight;
 
-    console.log(svgWidth);
-    console.log(svgHeight);
+    // TODO: add logging to the application
 
     let n = 7;
     let points = new Array(n);
@@ -229,7 +228,6 @@ export class ClusterComponent implements OnInit {
       this.gameService.setGameOver(true);
     }
 
-    console.log(this.selectedAnswers);
   }
 
   private isAnswerCorrect(x: number, y: number): boolean {

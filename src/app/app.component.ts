@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faBars, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { environment } from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,9 @@ import { faBars, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'double';
-  urlGitHub = 'https://github.com/muntjac-software/double' // TODO: extract to properties
+  tagLine = environment.tagLine;
+  title = environment.title;
+  urlGitHub = environment.urlGitHub;
 
   iconMenu = faBars;
   iconWarning = faTriangleExclamation;
