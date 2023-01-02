@@ -1,33 +1,32 @@
-<section [class.expanded]="menuExpanded"> <!-- TODO: possible refactor of class binding? -->
+<section [class.expanded]="menuExpanded">
 
   <div class="menu-item" id="instructions">
     <div class="menu-item-header">
-      <p><fa-icon [icon]="iconInfo" [class.expanded]="menuExpanded"></fa-icon></p>
-      <span [class.expanded]="menuExpanded">Instructions</span>
+      <p><fa-icon [icon]="iconInfo"></fa-icon></p>
+      <span>Instructions</span>
     </div>
-    <div class="menu-item-body" [class.expanded]="menuExpanded">
-      <p [class.expanded]="menuExpanded">Given today’s equation</p>
-      <p [class.expanded]="menuExpanded">Calculate the value of <br> Y for each of the X’s</p>
-      <p [class.expanded]="menuExpanded">Each system is an X <br> Each planet is a Y</p>
-      <p [class.expanded]="menuExpanded">Select all 7 correct Y’s <br> in the time limit to pass</p>
+    <div class="menu-item-body">
+      <p>Given today’s equation</p>
+      <p>Calculate the value of <br> Y for each of the X’s</p>
+      <p>Each system is an X <br> Each planet is a Y</p>
+      <p>Select all 7 correct Y’s <br> in the time limit to pass</p>
+      <!-- TODO: extract and use ngFor? -->
     </div>
   </div>
 
   <!-- TODO: sort the fade down, fix the position of #difficulty below #instructions? -->
-  <div class="menu-item" id="difficulty" [class.expanded]="menuExpanded">
-    <div class="menu-item-header" [class.expanded]="menuExpanded">
-      <p><fa-icon [icon]="iconSettings" [class.expanded]="menuExpanded"></fa-icon></p>
-      <span [class.expanded]="menuExpanded">Difficulty</span>
+  <div class="menu-item" id="difficulty">
+    <div class="menu-item-header">
+      <p><fa-icon [icon]="iconSettings"></fa-icon></p>
+      <span>Difficulty</span>
     </div>
-    <div class="menu-item-body" [class.expanded]="menuExpanded">
-      <ol>
-        <li [class.active]="difficulty === 0" (click)="difficulty = 0">recruit</li>
-        <li [class.active]="difficulty === 1" (click)="difficulty = 1">regular</li>
-        <li [class.active]="difficulty === 2" (click)="difficulty = 2">hardened</li>
-        <li [class.active]="difficulty === 3" (click)="difficulty = 3">veteran</li>
+    <div class="menu-item-body">
+      <ol *ngFor="let diff of difficulties; index as i">
+        <li [attr.id]="'diff-' + i" [class.active]="thisDifficulty === i" (click)="switchDifficulty(i)">{{ difficulty[i] }}</li>
+        <!-- TODO: Use ng mat button?-->
       </ol>
       <div id="difficulty-info">
-        <p>{{ difficultyInfo }} <br><fa-icon *ngIf="difficulty === 3" [icon]="iconDeath"></fa-icon></p>
+        <p>{{ difficultyInfo[thisDifficulty.valueOf()] }} <br> <fa-icon *ngIf="thisDifficulty === 3" [icon]="iconDeath"></fa-icon></p>
       </div>
     </div>
   </div>

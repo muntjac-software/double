@@ -2,18 +2,14 @@
 @import "../../../scss/animations";
 
 section {
-  background-color: #22272B;
-  width: 5rem;
+  background-color: $charcoal;
+  width: $width_menu_initial;
   height: 100%;
   position: fixed;
   top: $height_header;
   left: 0;
   z-index: 100; // TODO: refactor z-index across the app
   transition: .75s;
-
-  &.expanded {
-    width: 20rem;
-  }
 
   .menu-item {
 
@@ -23,17 +19,12 @@ section {
       display: flex;
 
       p {
-        width: 5rem; // TODO: extract
+        width: $width_menu_initial;
         text-align: center;
 
         fa-icon {
           opacity: .2;
           transition: .5s;
-
-          &.expanded {
-            opacity: .8;
-          }
-
         }
 
       }
@@ -42,71 +33,56 @@ section {
         letter-spacing: 2px;
         text-transform: uppercase;
         position: fixed;
-        left: 5rem; // TODO: extract
+        left: $width_menu_initial;
         margin-left: 1rem;
         opacity: 0;
         -webkit-animation-name: fadeOut;
         animation-name: fadeOut;
         -webkit-animation-duration: .75s;
         animation-duration: .75s;
-
-        &.expanded {
-          opacity: 0.8;
-          -webkit-animation-name: fadeIn;
-          animation-name: fadeIn;
-        }
-
       }
 
     }
 
     .menu-item-body {
       position: fixed;
-      left: 5rem; // TODO: extract
-      margin-left: 1rem;
+      left: $width_menu_initial;
+      margin-left: 1rem; // TODO: extract
 
-      &.expanded {
-        opacity: .8;
-      }
-
-      p {
+      p, ol {
         opacity: 0;
-        text-align: right;
-        margin-right: 3rem; // TODO: CALC PROPER + EXTRACT
-
         -webkit-animation-name: fadeOut;
         animation-name: fadeOut;
         -webkit-animation-duration: .75s;
         animation-duration: .75s;
+      }
 
-        &.expanded {
-          opacity: 0.8;
-          -webkit-animation-name: fadeIn;
-          animation-name: fadeIn;
-        }
-
+      p {
+        text-align: right;
+        margin: 1.25rem 3rem 1.25rem auto;
+        color: $text_secondary;
       }
 
       ol {
         list-style: none;
 
         li {
-          background-color: #738496;
-          border-left: 5px solid #596773;
+          background-color: $steel;
+          border-left: 5px solid $shuttle;
           padding: 5px 10px;
           text-transform: uppercase;
           width: 100%;
           margin: 0 1rem 1rem 1rem;
-          opacity: .7;
-          transition: .5s;
+          transition: .25s;
           border-radius: 3px;
           letter-spacing: 1px;
+          opacity: .8;
 
           &.active {
-            background-color: #36B37E;
-            border-left: 5px solid #1F845A;
-            color: #C6FFD4;
-            opacity: .9;
+            background-color: $fine_pine;
+            border-left: 5px solid $eucalyptus;
+            color: $mint;
+            opacity: 1;
           }
 
           &:hover {
@@ -121,8 +97,7 @@ section {
 
       #difficulty-info {
         position: fixed;
-        margin-top: 2rem;
-        left: 5rem; // TODO: extract
+        left: $width_menu_initial;
 
         p {
           opacity: .8;
@@ -137,9 +112,47 @@ section {
 
   }
 
-  #difficulty { // TODO
+  #instructions .menu-item-body {
     position: fixed;
-    top: 30rem;
+    top: 7rem;
+  }
+
+  #difficulty {
+    position: fixed;
+    top: 30.75rem;
+  }
+
+  &.expanded {
+    width: $width_menu_expanded;
+
+    .menu-item {
+
+      .menu-item-header {
+
+        p fa-icon {
+          opacity: .8;
+        }
+
+        span {
+          opacity: 0.8;
+          -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+        }
+
+      }
+
+      .menu-item-body {
+
+        p, ol {
+          opacity: 0.8;
+          -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+        }
+
+      }
+
+    }
+
   }
 
 }

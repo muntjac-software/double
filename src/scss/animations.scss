@@ -1,21 +1,17 @@
-
-@keyframes fadeInRight {
-  0%   { opacity: 0; transform: translateX(-20px); }
-  100% { opacity: .8; transform: translateX(0);    }
-}
-
-@keyframes fadeOutRight {
-  0%   { opacity: .8; transform: translateX(0px);  }
-  100% { opacity: 0; transform: translateX(-20px); }
-}
+@import "./variables";
 
 @keyframes fadeIn {
-  0%   { opacity: 0;  }
+  0%   { opacity: .0; }
   100% { opacity: .8; }
 }
 
 @keyframes fadeOut {
   0%   { opacity: .8; }
-  100% { opacity: 0;  }
+  100% { opacity: .0; }
 }
-// TODO: do I even need animations?
+
+@keyframes glitch {
+  0% { text-shadow: -2px 3px 0 $gun_metal, 2px -3px 0 $steel; transform: translate(var(--glitch-translate)); }
+  2% { text-shadow: 2px -3px 0 $gun_metal, -2px 3px 0 $steel; }
+  4%, 100% {  text-shadow: none; transform: none; }
+}

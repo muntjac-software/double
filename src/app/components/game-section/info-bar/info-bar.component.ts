@@ -1,7 +1,9 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { Subscription } from "rxjs";
 import { MessageService } from "../../../services/message.service";
+import {environment} from "../../../../environments/environment";
+import {ResultService} from "../../../services/result.service";
 
 @Component({
   selector: 'info-bar',
@@ -17,50 +19,30 @@ export class InfoBarComponent implements OnDestroy {
 
   date: string = new Date().toDateString();
   gameOver: boolean = false;
+  successMsg = environment.messageSuccess;
 
   iconCopy = faCopy;
+
+  resultService: ResultService;
 
   private subscription$: Subscription;
   private messageService: MessageService;
 
-  constructor(messageService: MessageService) {
+  constructor(messageService: MessageService, resultService: ResultService) {
     this.messageService = messageService;
+    this.resultService = resultService;
 
     this.subscription$ = this.messageService
       .getData()
-      .subscribe((data: any) => { this.gameOver = data })
-
+      .subscribe((data: any) => { this.gameOver = data });
   }
 
-  public ngOnDestroy(): void {
+  ngOnDestroy(): void { // TODO: consider using `| async` pipe
     this.subscription$.unsubscribe();
   }
 
-  copyResult() {
-    let content = '🧠 🧮 🗡️ :: [RECRUIT] [🟢🟢🟢🟢🟢🟢🟢] [5s]';
-    if (window.isSecureContext && navigator.clipboard) {
-      navigator.clipboard.writeText(content).then();
-    } else {
-      this.unsecuredCopyToClipboard(content);
-    }
-
+  get equation(): string {
+    return `Y = ${this.mValue}X + ${this.cValue}`;
   }
-
-  private unsecuredCopyToClipboard(content: string) { // TODO: temp hack to bypass !HTTPS on double.muntjac.io
-    const textArea = document.createElement("textarea");
-    textArea.value = content;
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    try {
-      document.execCommand('copy');
-      console.log('Using deprecated copy function');
-    } catch(err) {
-      console.error('Unable to copy to clipboard',err)
-    }
-
-    document.body.removeChild(textArea);
-  }
-  // https://stackoverflow.com/questions/71873824/copy-text-to-clipboard-cannot-read-properties-of-undefined-reading-writetext
 
 }

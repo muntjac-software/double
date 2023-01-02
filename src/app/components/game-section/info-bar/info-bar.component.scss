@@ -1,17 +1,17 @@
 @import "../../../../scss/variables";
 
 section {
-  background-color: #2C333A;
+  background-color: $gun_metal;
   width: $width_info_bar;
   position: fixed;
-  top: 4rem;
-  left: 5rem;
+  top: $height_header;
+  left: $width_menu_initial;
   height: 100%;
   z-index: 101;
   transition: .75s;
 
   &.expanded {
-    left: 20rem;
+    left: $width_menu_expanded;
   }
 
   p {
@@ -21,8 +21,8 @@ section {
 
   #equation {
     padding: .5rem 1.5rem;
-    background-color: #007ACC;
-    border-right: .5rem solid #075C96;
+    background-color: $lochmara;
+    border-right: .5rem solid $venetian;
     margin-left: 0;
     width: calc(100% - 3.5rem);
   }
@@ -32,8 +32,8 @@ section {
     padding-left: 0;
 
     li {
-      background-color: #738496;
-      border-right: 5px solid #596773;
+      background-color: $steel;
+      border-right: 5px solid $shuttle;
       padding: 5px 1.5rem;
       text-transform: uppercase;
       width: 5rem;
@@ -59,7 +59,7 @@ section {
     button {
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: #2C333A;
+      color: $gun_metal;
     }
 
   }

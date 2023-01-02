@@ -1,0 +1,90 @@
+@import "../../../scss/variables";
+@import "../../../scss/animations";
+
+section {
+   margin-left: 1rem;
+
+  h1 {
+    letter-spacing: 1px;
+    font-size: 1.75rem;
+    text-transform: lowercase;
+  }
+
+  #title-initial {
+    display: block
+  }
+
+  #title-expanded {
+    display: none;
+    color: #ccc;
+
+    .d2xble { color: $text_primary; }
+
+  }
+
+  #title-closed {
+    display: none;
+  }
+
+  // EXPANDED STYLING
+  &.expanded {
+
+    #title-initial {
+      display: none
+    }
+
+    #title-expanded {
+      display: block
+    }
+
+    #title-closed {
+      display: none;
+    }
+
+  }
+
+  // CLOSED STYLING
+  &.closed {
+
+    #title-initial {
+      display: none
+    }
+
+    #title-expanded {
+      display: none;
+    }
+
+    #title-closed {
+      display: block;
+    }
+
+  }
+
+}
+
+
+// Glitch Setup
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.stack span {
+  font-weight: bold;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  letter-spacing: 1px;
+  font-size: 1.75rem;
+  text-transform: lowercase;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: glitch 200ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 50ms);
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+

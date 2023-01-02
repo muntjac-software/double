@@ -1,24 +1,11 @@
 <header>
-  <fa-icon id="menu" [icon]="iconMenu" (click)="toggleMenu()"></fa-icon>
-  <h1 id="title">{{ title }}</h1>
-
-  <div id="container1" [class.expanded]="menuExpanded">
-    <div class="stack" style="--stacks: 3;">
-      <span style="--index: 0;">d<span class="double">2x</span>ble</span>
-      <span style="--index: 1;">d<span class="double">2x</span>ble</span>
-      <span style="--index: 2;">d<span class="double">2x</span>ble</span>
-    </div>
-  </div>
-
-  <div id="container2" [class.expanded]="menuExpanded">
-    <div class="stack" style="--stacks: 3;">
-      <span style="--index: 0;">{{ title }}</span>
-      <span style="--index: 1;">{{ title }}</span>
-      <span style="--index: 2;">{{ title }}</span>
-    </div>
-  </div>
-
-  <p id="tag-line">a game to keep your mental maths sharp</p>
+  <fa-icon id="menu-button" [icon]="iconMenu" (click)="toggleMenu()"></fa-icon>
+  <double-title
+    [title]="title"
+    [menuExpanded]="menuExpanded"
+    [menuClosed]="menuClosed">
+  </double-title>
+  <p id="tag-line" [class.expanded]="menuExpanded" [class.closed]="menuClosed">{{ tagLine }}</p>
   <p id="under-development"><fa-icon [icon]="iconWarning"></fa-icon>Under Development</p>
 </header>
 
@@ -27,7 +14,7 @@
 <game-section [menuExpanded]="menuExpanded"></game-section>
 
 <footer>
-  <a href="https://github.com/muntjac-software/double" target="_blank">
+  <a [href]="urlGitHub" target="_blank">
     <img src="assets/img/muntjac.png" alt="muntjac">
   </a>
 </footer>

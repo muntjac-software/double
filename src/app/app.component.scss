@@ -2,7 +2,7 @@
 @import "../scss/animations";
 
 header {
-  background-color: #22272B;
+  background-color: $charcoal;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,8 +13,8 @@ header {
   z-index: 1000;
   user-select: none;
 
-  #menu {
-    width: 5rem;
+  #menu-button {
+    width: $width_menu_initial;
     text-align: center;
     font-size: 1.25rem;
     opacity: .8;
@@ -27,64 +27,12 @@ header {
 
   }
 
-  h1 {
-    position: fixed;
-    left: 6rem; // TODO: extract
-    letter-spacing: 1px;
-    font-size: 1.75rem;
-    text-transform: lowercase;
-  }
-
-  #title {
-    display: block;
-
-    &.expanded {
-      display: none;
-    }
-
-    &.closed {
-      display: none;
-    }
-
-  }
-
-  #container1 {
-    display: none;
-    color: #ccc;
-
-    &.expanded {
-      display: block;
-    }
-
-    &.closed {
-      display: none;
-    }
-
-    .double {
-      color: $text_default;
-    }
-
-  }
-
-  #container2 {
-    display: none;
-
-    &.expanded {
-      display: none;
-    }
-
-    &.closed  {
-      display: block;
-    }
-
-  }
-
   #tag-line {
-    color: #ccc;
+    color: $text_secondary;
     opacity: 0;
     position: fixed;
-    width: 20rem;
-    left: 20rem;
+    width: $width_info_bar;
+    left: $width_menu_expanded;
     margin-left: 1rem;
     font-size: .9rem;
     transition: .75s;
@@ -124,7 +72,7 @@ footer {
   position: fixed;
   bottom: 0;
   height: 2rem;
-  background-color: #303030;
+  background-color: $footer;
   width: 100%;
   left: 0;
   z-index: 1000;
@@ -145,70 +93,4 @@ footer {
 
   }
 
-}
-
-
-// Glitch Demo
-
-#container1, #container2 {
-  color: var(--color);
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  left: 6rem; // TODO: extract
- }
-
-.stack {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.stack span {
-  font-weight: bold;
-  grid-row-start: 1;
-  grid-column-start: 1;
-  letter-spacing: 1px;
-  font-size: 1.75rem;
-  text-transform: lowercase;
-  --stack-height: calc(100% / var(--stacks) - 1px);
-  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
-  --clip-top: calc(var(--stack-height) * var(--index));
-  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
-  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
-  //animation: stack 200ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms);
-  animation: glitch 200ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 50ms);
-}
-
-.stack span:nth-child(odd) { --glitch-translate: 8px; }
-.stack span:nth-child(even) { --glitch-translate: -8px; }
-
-@keyframes stack {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%);
-    text-shadow: -2px 3px 0 rgba(255, 0 , 0, 0.5), 2px -3px 0 rgba(0, 0 , 255, 0.5);
-  }
-60% {
-    opacity: 0.5;
-    transform: translateX(50%);
-  }
-80% {
-    transform: none;
-    opacity: 1;
-    text-shadow: 2px -3px 0 rgba(255, 0 , 0, 0.5), -2px 3px 0 rgba(0, 0 , 255, 0.5);
-  }
-100% {
-     text-shadow: none;
-   }
-}
-
-@keyframes glitch {
-  0% {
-    text-shadow: -2px 3px 0 #2C333A, 2px -3px 0 #738496;
-    transform: translate(var(--glitch-translate));
-  }
-  2% {
-    text-shadow: 2px -3px 0 #2C333A, -2px 3px 0 #738496;
-  }
-  4%, 100% {  text-shadow: none; transform: none; }
 }
